@@ -1,0 +1,23 @@
+namespace Carfleet
+{
+    public class truck
+    {
+        #region private attributes
+        private string _chassisNumber;
+        #endregion private attributes
+
+        #region public methods
+        public Truck(string chassisNumber)
+        {
+            _chassisNumber = chassisNumber;
+        }
+                public Truck(string hazardouslicence)
+        {
+            _hazardouslicence = hazardouslicence;
+        }
+
+        public string ChassisNumber { get => _chassisNumber;}
+        
+        #endregion public methods
+    }
+}

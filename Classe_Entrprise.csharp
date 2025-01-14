@@ -1,0 +1,53 @@
+namespace Carfleet
+{
+    public class Enterprise
+    {
+        #region private attributes
+        private List<Truck> _Trucks = new List<Trucks>();
+        private List<TruckDriver> _TruckDrivers = new List<TruckDriver>();
+        #endregion private attributes
+
+        #region public methods
+        //STEP 1.2
+        public void AssignTruckToDriver(string chassisNumber, string driverEmailaddress)
+        {
+            TruckDriver Truckdriver = this.GetTruckDriverByEmailaddress(TruckdriverEmailaddress);
+            Truck truck = this.GettruckByChassisNumber(chassisNumber);
+            Truckdriver.TakeATruck(truck);
+        }
+        #endregion public methods
+
+        #region private methods
+        //STEP 1.2
+        private Truck GetTruckByChassisNumber(string chassisNumber)
+        {
+            foreach (Truck Truck in _Trucks)
+            {
+                if (Truck.ChassisNumber == chassisNumber)
+                {
+                    return Truck;
+                }
+            }
+            throw new TruckNotFoundException();
+        }
+
+        //STEP 1.1
+        private TruckDriver GetTruckDriverByEmailaddress(string TruckdriverEmailaddress)
+        {
+            foreach (TruckDriver Truckdriver in _Truckdrivers)
+            {
+                if (Truckdriver.Emailaddress == TruckdriverEmailaddress)
+                {
+                    return Truckdriver;
+                }
+            }
+            throw new TruckDriverNotFoundException();
+        }
+
+        #region nesteded class
+        public class EnterpriseException : Exception { } //Not mandatory
+        public class TruckNotFoundException : EnterpriseException { }
+        public class TruckDriverNotFoundException : EnterpriseException { }
+        #endregion nesteded class
+    }
+}
