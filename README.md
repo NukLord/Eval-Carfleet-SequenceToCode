@@ -27,15 +27,17 @@ Chaque technicien atteindra les objectifs suivants en réalisant ce laboratoire:
 
 ## Context métier
 
-Actuellement l'entreprise peut attribuer un chauffeur à un véhicule, pour autant que l'un est l'autre existent et que le chauffeur ne soit pas déjà assigné à un véhicule.
+Actuellement l'entreprise peut attribuer un véhicule à un chauffeur, pour autant que l'un est l'autre existe et que le chauffeur ne soit pas déjà assigné à un véhicule. Ce cas d'utilisation reste identique.
 
-Dans cette étape de développement, nous désirons permettre à l'entreprise de réaliser du transport de matières dangereuses par camion.
+Dans cette seconde étape de développement, nous désirons permettre à l'entreprise de réaliser du transport par camion.
 
-Les 4 cas suivants doivent être pris en compte:
-* le chauffeur dispose d'une licence spéciale pour ce type de transport et le camion est homologué en conséquence.
-* puis l
+Les cas suivants doivent être pris en compte (sans regression fonctionnelle):
+* transport par camion "standard".
+* transport par camion contenant des matières dangereuses en respectant les conditions suivantes:
+   * le chauffeur du camion doit disposer d'une licence pour le transport de matières dangereuses valide.
+   * le camion doit être homologué pour le transport de matière dangereuse. Homologation qui valable à vie, sauf en cas d'accident où une inspection sera obligatoire.
 
-## Point de départ
+* ## Point de départ
 
 * Voici le diagramme de séquence à étudier (en deux partie):
 
@@ -55,8 +57,8 @@ Les 4 cas suivants doivent être pris en compte:
       * hérite de la classe Vehicle.
       * Truck implémente en plus une propriété permettant de connaître si le camion en question est homologué pour le transport de matières dangereuses.
 
-* Hiérachie des exceptions
-  - [ ] En observant le diagramme de séquence, déduisez la hiérachie des exceptions.
+* Hiérarchie des exceptions
+  - [ ] En observant le diagramme de séquence, déduisez la hiérarchie des exceptions.
 
 ## Livraison
 
